@@ -1,0 +1,27 @@
+
+<div class="container">
+  <table class="table table-bordered table-dark col-8 center" style="margin-left:13px;">
+  <button type="button" class="btn btn-white border-primary" style="margin-left:13px;"> 
+  <%= link_to 'Recevoir un email', emails_path, method: :post%>
+  </button>
+
+    <thead>
+      <tr>
+        <th scope="col">Liste des emails</th>
+        <th scope="col">Email sélectionné</th>
+      </tr>
+    </thead>
+    <tbody> 
+  <%@emails.each do |email|%>
+      <tr id="email-list">
+        <th scope="row"><%= email.object%></th>
+        <th scope="row"></th>
+      </tr> 
+    </tbody>
+    <% end %>
+  </table>
+  
+  
+</div> 
+
+
