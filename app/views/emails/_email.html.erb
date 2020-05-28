@@ -2,15 +2,15 @@
  <tr id="<%=email.id%>">
   
   <th id="email_list">#<%=email.id%></th>
-  <% if (email.read == false) %>
+ <% if (email.read == false)%>
   <td>
     <strong><%= link_to email.object, email_path(email.id), remote: true %></strong>
-  </td>
-  <% else %>
+  </td> 
+ <% else %> 
 <td>
     <%= link_to email.object, email_path(email.id), remote: true %>
   </td>
-    <% end %>
+  <% end %>
 </tr>
 
 

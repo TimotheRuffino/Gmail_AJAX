@@ -4,22 +4,22 @@
 
 <div class="row">
   <div class="col">
-  <% if (email.read) %>
+  <% if (email.read) %> 
 <p> Objet : <%= email.object %></p>
-<p><strong><%= email.body %></strong></p>
- <% else %>
+<p><strong><%= email.body %></strong></p> 
+ <% else %> 
  <p> Objet : <%= email.object %></p>
 <p><%= email.body %></p>
-  <%end %>
+  <%end %> 
   
 <div class="row">
-<% if (email.read) %>
+<% if (email.read) %> 
   
     <%= button_to "Marquer comme non lu", email_path(email.id), method: "put", remote: true, class: "btn btn-primary mx-3" %>
   
-    <% else %>
-    <%= button_to "Marquer comme lu", email_path(email.id), method: "put", remote: true, class: "btn btn-primary mx-3" %>
-  <%end %>
+     <% else %> 
+    <%= button_to "Marquer comme lu", email_path(email.id), method: "put", remote: true, class: "btn btn-primary mx-3" %> 
+  <%end %> 
 
 
 
