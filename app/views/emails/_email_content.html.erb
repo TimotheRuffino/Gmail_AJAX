@@ -1,0 +1,15 @@
+</div  <%= email.id %>>
+<div class="row">
+  <div class="col">
+<p> Objet : <%= email.object %></p>
+<p><%= email.body %></p>
+
+
+  <button type="button" class="btn btn-info">Marquer comme lu</button>
+  <button type="button" class="btn btn-danger">
+    <%= link_to "Supprimer", email_path(email.id), method: "delete", class:"text-white", remote: true %> 
+  </button>
+  </div>
+</div>  
+
+</div>

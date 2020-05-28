@@ -22,7 +22,7 @@ Email.destroy_all
   end
 end
 
-5.times do
+2.times do
   my_email = Email.create(object:  Faker::DcComics.title,
-                       body: Faker::Lorem.sentence(word_count: 10))
+                       body: Faker::Lorem.sentence(word_count: 100))
 end

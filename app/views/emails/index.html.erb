@@ -1,27 +1,59 @@
 
-<div class="container">
-  <table class="table table-bordered table-dark col-8 center" style="margin-left:13px;">
-  <button type="button" class="btn btn-white border-primary" style="margin-left:13px;"> 
-  <%= link_to 'Recevoir un email', emails_path, method: :post%>
-  </button>
 
-    <thead>
+
+<div class="container">
+<button type="button" class="btn btn-white border-primary" style="margin-left:13px;"> 
+  <%= link_to 'Recevoir un email', emails_path, method: :post, remote: true%>
+  </button>
+  <div class="row">
+    <div class="col-md-4">
+  <table class="table table-sm table-bordered table-dark col-8 center" style="margin-left:13px;">
+  
+<br>
+<br>
+    <thead class="thead-dark">
       <tr>
-        <th scope="col">Liste des emails</th>
-        <th scope="col">Email sélectionné</th>
+      <th scope="col" >#</th>
+        <th scope="col" >Liste des emails</th>
+       
       </tr>
     </thead>
     <tbody> 
   <%@emails.each do |email|%>
-      <tr id="email-list">
-        <th scope="row"><%= email.object%></th>
-        <th scope="row"></th>
-      </tr> 
+    
+          <%= render 'email', email: email %>
+     
     </tbody>
     <% end %>
+    
   </table>
+  </div>
   
+
+
+  
+    <div class="col-md-8">
+  <table class="table table-sm table-bordered table-dark col-8 center" style="margin-left:13px;">
+<br>
+<br>
+    <thead class="thead-dark">
+      <tr>
+     
+        <th scope="col">Email sélectionné</th>
+      </tr>
+    </thead>
+    <tbody> 
+ 
+    
+          <th id="email-content" scope="row"> 
+    <%= render 'email_content', email: @emails.first %>
+    </th>
+     
+    </tbody>
+   
+    
+  </table>
+  </div>
+</div>
   
 </div> 
-
-
