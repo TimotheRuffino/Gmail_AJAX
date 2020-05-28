@@ -1,15 +1,32 @@
+
+<% color = email.read ? "text-secondary" : "text-primary" %>
 </div  <%= email.id %>>
+
 <div class="row">
   <div class="col">
+  <% if email.read %>
 <p> Objet : <%= email.object %></p>
+<p><strong><%= email.body %></strong></p>
+ <% else %>
+ <p> Objet : <%= email.object %></p>
 <p><%= email.body %></p>
+  <%end %>
+  
+<div class="row">
+<% if email.read %>
+  
+    <%= button_to "Marquer comme non lu", email_path(email.id), method: "put", remote: true, class: "btn btn-primary mx-3" %>
+  
+    <% else %>
+    <%= button_to "Marquer comme lu", email_path(email.id), method: "put", remote: true, class: "btn btn-primary mx-3" %>
+  <%end %>
 
 
-  <button type="button" class="btn btn-info">Marquer comme lu</button>
-  <button type="button" class="btn btn-danger">
-    <%= link_to "Supprimer", email_path(email.id), method: "delete", class:"text-white", remote: true %> 
-  </button>
+
+    <%= button_to "Supprimer", email_path(email.id), method: "delete", class:"text-white", remote: true, class: "btn btn-danger" %> 
+ 
   </div>
 </div>  
+</div>
 
 </div>
