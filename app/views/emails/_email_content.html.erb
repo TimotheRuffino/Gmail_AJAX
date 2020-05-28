@@ -1,10 +1,10 @@
 
-<% color = email.read ? "text-secondary" : "text-primary" %>
+
 </div  <%= email.id %>>
 
 <div class="row">
   <div class="col">
-  <% if @email.read %>
+  <% if (email.read) %>
 <p> Objet : <%= email.object %></p>
 <p><strong><%= email.body %></strong></p>
  <% else %>
@@ -13,7 +13,7 @@
   <%end %>
   
 <div class="row">
-<% if email.read %>
+<% if (email.read) %>
   
     <%= button_to "Marquer comme non lu", email_path(email.id), method: "put", remote: true, class: "btn btn-primary mx-3" %>
   
