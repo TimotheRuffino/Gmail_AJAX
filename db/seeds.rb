@@ -24,5 +24,5 @@ end
 
 2.times do
   my_email = Email.create(object:  Faker::DcComics.title,
-                       body: Faker::Lorem.sentence(word_count: 100))
+                       body: Faker::Lorem.sentence(word_count: 100), read: false)
 end
